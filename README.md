@@ -9,6 +9,15 @@ The *OpenAPI Specification (OAS)* defines a standard, language-agnostic interfac
 An OpenAPI definition can then be used by documentation generation tools to display the API, code generation tools to generate servers and clients in various programming languages, testing tools, and many other use cases.
 
 **Getting Started:** [Swagger OpenAPI Specification](https://swagger.io/specification/)
-<br/>
 
 
+## Visual Studio Code Required Plugins
+Few of the extensions should be pre-installed when you install Visual Studio Code. If you can't see then install from extension tab.
+* [Spring Boot Extension Pack](https://marketplace.visualstudio.com/items?itemName=Pivotal.vscode-boot-dev-pack)
+* [Java Extension Pack](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack)
+* [Maven for Java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-maven)
+* [OpenAPI Preview](https://marketplace.visualstudio.com/items?itemName=zoellner.openapi-preview)
+* [Swagger Viwer](https://marketplace.visualstudio.com/items?itemName=Arjun.swagger-viewer)
+* [openapi-lint](https://marketplace.visualstudio.com/items?itemName=mermade.openapi-lint)
+* [Java Code Generator](https://marketplace.visualstudio.com/items?itemName=sohibe.java-generate-setters-getters)
+* [YAML](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml)
