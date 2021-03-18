@@ -34,7 +34,7 @@ Few of the extensions should be pre-installed when you install Visual Studio Cod
    3. `oc projects` - To see available projects
    4. `oc new-project acctrainings-firstName` - Create new project. Replace firstName with your name.
    5. `oc projects` - check again the project whether it's created
-   6. `oc new-app fabric8/s2i-java:latest-java11~https://github.com/acc-trainings/customer-api.git#customer-api-rahul --name=customer-api` - Create new app under your project.
+   6. `oc new-app fabric8/s2i-java:latest-java11~https://github.com/rahul0309/customer-api.git --name=customer-api` - Create new app under your project.
    7. `oc get services` - To get services
    8. `oc get pods` - To check created pods
    9. `oc get routes` - See available routes for your service.
