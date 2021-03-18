@@ -6,6 +6,7 @@ import com.acc.training.customerapi.api.CustomerApi;
 import com.acc.training.customerapi.model.Customer;
 import com.acc.training.customerapi.model.InlineResponse200;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -26,8 +27,13 @@ public class CustomerController implements CustomerApi {
 
     @Override
     public ResponseEntity<Customer> getCustomer(String id) {
-        // TODO Auto-generated method stub
-        return null;
+
+        Customer stubResponse = new Customer();
+        stubResponse.setCustomerId("12345");
+        stubResponse.setCustomerName("Rahul Anand");
+        stubResponse.setCustomerAddress("Hartford, CT");
+        
+        return ResponseEntity.status(HttpStatus.OK).body(stubResponse);
     }
 
     @Override
