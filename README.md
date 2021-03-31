@@ -47,8 +47,11 @@ ALTER TABLE bank.holding replica identity FULL;
 insert into bank.holding values (1000, 1, 'VFIAX', 10, now(), now());
 ```
 **Install Zookeeper and Kafka on Docker**
-`docker run -d --name zookeeper -p 2181:2181 -p 2888:2888 -p 3888:3888 debezium/zookeeper:1.1`
-`docker run -d --name kafka -p 9092:9092 --link zookeeper:zookeeper debezium/kafka:1.1`
+```
+docker run -d --name zookeeper -p 2181:2181 -p 2888:2888 -p 3888:3888 debezium/zookeeper:1.1
+
+docker run -d --name kafka -p 9092:9092 --link zookeeper:zookeeper debezium/kafka:1.1
+```
 
 **Debezium - We use a kafka tool called Connect to run debezium. As the name suggests connect provides a framework to connect input data sources to kafka and connect kafka to output sinks. It runs as a separate service.**
 ```
@@ -66,11 +69,12 @@ curl -i -X POST -H "Accept:application/json" -H "Content-Type:application/json" 
 localhost:8083/connectors/ -d '{"name": "sde-connector", "config": {"connector.class": "io.debezium.connector.postgresql.PostgresConnector", "database.hostname": "postgres", "database.port": "5432", "database.user": "start_data_engineer", "database.password": "password", "database.dbname" : "start_data_engineer", "database.server.name": "bankserver1", "table.whitelist": "bank.holding"}}'
 ```
 **Check for presence of connector**
-`curl -H "Accept:application/json" localhost:8083/connectors/`
+```curl -H "Accept:application/json" localhost:8083/connectors/```
 
 **Consumer**
 ```
 docker run -it --rm --name consumer --link zookeeper:zookeeper \
+
 --link kafka:kafka debezium/kafka:1.1 watch-topic -a bankserver1.bank.holding --max-messages 1 | grep '^{' | jq
 ```
 
