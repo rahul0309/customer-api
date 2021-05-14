@@ -1,5 +1,9 @@
 # Customer API
 
+## Objective
+
+![Use Case](https://github.com/rahul0309/customer-api/blob/main/src/main/resources/event_source.jpeg?raw=true)
+
 ## CDC
 Change data capture is a software design pattern used to capture changes to data and take corresponding action based on that change. The change to data is usually one of read, update or delete. The corresponding action usually is supposed to occur in another system in response to the change that was made in the source system.
 
