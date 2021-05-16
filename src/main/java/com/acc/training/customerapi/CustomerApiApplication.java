@@ -12,6 +12,7 @@ public class CustomerApiApplication {
 	*/
 
 	public static void main(String[] args) {
+        System.out.println("Customer API Started Succesfully...");
 		SpringApplication.run(CustomerApiApplication.class, args);
 	}
 

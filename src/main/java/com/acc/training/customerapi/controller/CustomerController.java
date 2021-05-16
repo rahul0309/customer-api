@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.acc.training.customerapi.model.Customer;
 import com.acc.training.customerapi.repository.CustomerRepository;
+import com.acc.training.customerapi.service.CustomerService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -27,6 +28,9 @@ public class CustomerController {
     @Autowired
     private CustomerRepository repository;
 
+    @Autowired
+    private CustomerService service;
+
     @Operation(summary = "Get a customer by its customer Id")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Found the customer", content = {
@@ -37,7 +41,7 @@ public class CustomerController {
     @RequestMapping(path = "/getAllCustomers", method = RequestMethod.GET)
     public ResponseEntity<List<Customer>> getCustomers() {
 
-        List<Customer> response = repository.findAll();
+        List<Customer> response = service.customers();
 
         System.out.println("Response: " + response.size());
 
@@ -54,7 +58,7 @@ public class CustomerController {
     public ResponseEntity<Customer> createCustomer(
             @Parameter(description = "Create Customer") @RequestBody Customer customer) {
 
-        Customer response = repository.save(customer);
+        Customer response = service.saveCustomer(customer);
 
         System.out.println("Response: "+response.getCustomerName());
 
