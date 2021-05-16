@@ -85,6 +85,9 @@ docker run -it --rm --name consumer --link zookeeper:zookeeper \
 **Deploy customerAPI to docker & link to postgres database**
 ```
 docker image build -t customer-api .
-docker run --name customer-api --link postgres -p 8080:8080 -d customer-api
+docker run --name customer-api --link postgres -p 9090:9090 -d customer-api
 ```
-
+** Launch Swagger URL in your browser (chrome is preferred)
+```
+http://localhost:9090/customer-api/swagger-ui.html
+```
