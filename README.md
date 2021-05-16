@@ -93,4 +93,4 @@ http://localhost:9090/customer-api/swagger-ui.html
 ```
 
 **GitHub Page**
-`https://rahul0309.github.io/customer-api/`
+[click here](https://rahul0309.github.io/customer-api/)
