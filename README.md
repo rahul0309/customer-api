@@ -70,7 +70,7 @@ curl -H "Accept:application/json" localhost:8083/connectors/
 ```
 curl -i -X POST -H "Accept:application/json" -H "Content-Type:application/json" \
 
-localhost:8083/connectors/ -d '{"name": "sde-connector", "config": {"connector.class": "io.debezium.connector.postgresql.PostgresConnector", "database.hostname": "postgres", "database.port": "5432", "database.user": "start_data_engineer", "database.password": "password", "database.dbname" : "start_data_engineer", "database.server.name": "acnserver1", "table.whitelist": "acn.customer"}}'
+localhost:8083/connectors/ -d '{"name": "sde-connector-customer", "config": {"connector.class": "io.debezium.connector.postgresql.PostgresConnector", "database.hostname": "postgres", "database.port": "5432", "database.user": "start_data_engineer", "database.password": "password", "database.dbname" : "start_data_engineer", "database.server.name": "acnserver1", "table.whitelist": "acn.customer"}}'
 
 ```
 **Check for presence of connector**
