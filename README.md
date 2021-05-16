@@ -91,3 +91,6 @@ docker run --name customer-api --link postgres -p 9090:9090 -d customer-api
 ```
 http://localhost:9090/customer-api/swagger-ui.html
 ```
+
+**GitHub Page**
+`https://rahul0309.github.io/customer-api/`
