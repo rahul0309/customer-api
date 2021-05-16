@@ -78,7 +78,7 @@ localhost:8083/connectors/ -d '{"name": "sde-connector-customer", "config": {"co
 
 **Consumer**
 ```
-docker run -it --rm --name consumer --link zookeeper:zookeeper \
+docker run -it --rm --name customer-consumer --link zookeeper:zookeeper \
 
 --link kafka:kafka debezium/kafka:1.1 watch-topic -a acnserver1.acn.customer --max-messages 1 | grep '^{' | jq
 ```
